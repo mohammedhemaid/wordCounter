@@ -10,15 +10,15 @@ public class WordCounterMain {
         BufferedReader bufferedReaderBigFile = readFile("bigFile.txt");
         BufferedReader bufferedReaderSmallFile = readFile("smallFile.txt");
 
-        int bigWordPerMinute = getBigWordPerMinute(bufferedReaderBigFile, bigFileMinutes);
+        int bigWordsPerMinute = getWordsPerMinute(bufferedReaderBigFile, bigFileMinutes);
 
-        int smallWordPerMinute = getBigWordPerMinute(bufferedReaderSmallFile, smallFileMinutes);
+        int smallWordsPerMinute = getWordsPerMinute(bufferedReaderSmallFile, smallFileMinutes);
 
 
-        System.out.println("average " + (smallWordPerMinute + bigWordPerMinute) / 2);
+        System.out.println("average " + (smallWordsPerMinute + bigWordsPerMinute) / 2);
     }
 
-    private static int getBigWordPerMinute(BufferedReader bufferedReaderBigFile, int minutes) throws IOException {
+    private static int getWordsPerMinute(BufferedReader bufferedReaderBigFile, int minutes) throws IOException {
         int counterBig = getCounter(bufferedReaderBigFile);
         int bigWordPerMinute = counterBig / minutes;
         System.out.println(WORD_PER_MINUTE + bigWordPerMinute);
